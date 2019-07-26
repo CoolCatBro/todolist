@@ -1,0 +1,8 @@
+.TodoList {
+    width: 20rem;
+}
+
+.fa-trash {
+    float: right;
+    margin-left: 5px;
+}
