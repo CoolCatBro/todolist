@@ -13,7 +13,7 @@ class TodoList extends Component {
             ]
         };
 
-        fetch("http://127.0.0.1:4000/api/todo")
+        fetch("https://ktodoapi.azurewebsites.net/todo")
         .then((res) => res.json())
         .then((result) => {
           this.setState({
@@ -28,7 +28,7 @@ class TodoList extends Component {
     deleteTodoByIndex(index) {
         let id = this.state.todos[index]._id;
 
-        fetch("http://127.0.0.1:4000/api/todo/"+id,
+        fetch("https://ktodoapi.azurewebsites.net/todo/"+id,
         {
             method: 'DELETE',
             headers: {
@@ -49,7 +49,7 @@ class TodoList extends Component {
         if(!this.state.todos[index].completed)
             state = "true";
 
-        fetch("http://127.0.0.1:4000/api/todo/"+id+"?state="+state,
+        fetch("https://ktodoapi.azurewebsites.net/todo/"+id+"?state="+state,
         {
             method: 'PUT',
             headers: {
@@ -96,7 +96,7 @@ class TodoList extends Component {
                             <Button variant="outline-secondary" 
                             onClick = {
                                 () => {
-                                fetch("http://127.0.0.1:4000/api/todo",
+                                fetch("https://ktodoapi.azurewebsites.net/todo",
                                 {
                                     method: 'POST',
                                     headers: {
